@@ -54,7 +54,7 @@ module Xpay
 
     def load_config(app_root = Dir.pwd)
       self.app_root = (RAILS_ROOT if defined?(RAILS_ROOT)) || app_root
-      self.environment = (RAILS_ENV if defined?(RAILS_ENV)) || "development"
+      self.environment = ENV['RAILS_ENV'] || "development"
       parse_config
       return true
     end
